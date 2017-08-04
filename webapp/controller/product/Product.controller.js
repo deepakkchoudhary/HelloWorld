@@ -13,7 +13,7 @@ sap.ui.define([
 			oView = this.getView();
 			//alert(oView);
 			var path = "/Products/" + oArgs+"/";
-			alert(path);
+			//alert(path);
 			oView.bindElement({
 				path: path,
 				events: {
