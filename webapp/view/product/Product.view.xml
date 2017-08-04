@@ -1,0 +1,25 @@
+<mvc:View controllerName="com.acc.helloworldHelloWorld.controller.product.Product" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" displayBlock="true" xmlns="sap.m">
+	<Page id="Product" title="{i18n>productTitle}" showNavButton="true" navButtonType="Back" navButtonPress="onNavBack">
+		<content>
+			<VBox>
+				<f:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+					columnsL="1" columnsM="1">
+					<f:content>
+						<Text text="{mod_product>/Products/0/Item_Name}"/>
+						<Label text="Item No:"/>
+						<Text text="{mod_product>/Products/0/Item_No}"/>
+						<Label text="Item Name:"/>
+						<Text text="{Item_Name}"/>
+						<Label text="Item ParentName:"/>
+						<Text text="{Item_ParentName}"/>
+						<Label text="Create Date:"/>
+						<Text text="{product>Create_Date}"/>
+						<!--<Label text="{i18n>FirstName}" />-->
+						<!--<Text text="{FirstName}" />-->
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,10 +1,77 @@
 <mvc:View controllerName="com.acc.helloworldHelloWorld.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-	<App>
+	<App id="app">
 		<pages>
-			<Page title="{i18n>title}">
+			<Page>
+				<customHeader>
+					<Bar>
+						<contentMiddle>
+							<Title text="{i18n>title}"/>
+						</contentMiddle>
+						<contentRight>
+							<Button press="goToSearch" id="srchBtn" tooltip="Go To Search Page" icon="sap-icon://search" class="sapMBtnCustomIcon sapMBtnIcon sapUiIcon"></Button>
+						</contentRight>
+					</Bar>
+				</customHeader>
+				<!-- 	<Page title="{i18n>title}" showNavButton="true" navButtonType="Emphasized" navButtonPress="goToSearch" navButtonTooltip="Search" >  -->
+				<!--<CustomHeader>-->
+				<!--	<Toolbar>-->
+				<!--		<Content>-->
+				<!--			<ToolbarSpacer>-->
+				<!--				<Text text="{i18n>title}"></Text>-->
+				<!--			</ToolbarSpacer>-->
+				<!--			<Button icon="search" press="goToSearch"></Button>-->
+				<!--		</Content>-->
+				<!--	</Toolbar>-->
+				<!--</CustomHeader>-->
 				<content>
-					<Text text="New Text"/>
+					<HBox class="sapUiMediumMarginBegin sapUiMediumMarginEnd">
+						<VBox width="30%">
+							<Button id="btn" visible="true" text="show Date" press="myFunction"/>
+							<Text id="dt" text="Today's Date"/>
+							<Button id="btnSearch" visible="true" text="Search" press="goToSearch"/>
+						</VBox>
+						<VBox width="30%">
+							<Button id="light" visible="true" text="On" press="switchBulb"/>
+							<Image id="bulb" visible="true" src="./img/pic_bulboff.gif" alt="bulb"></Image>
+						</VBox>
+						<VBox width="40%">
+							<HBox height="95%">
+								<Table id="tab" visible="true" width="100%" inset="true" headerText="Emp Details" headerDesign="Standard" showSeparators="None"
+									swipeDirection="Both">
+									<columns>
+										<Column hAlign="Begin" vAlign="Inherit">
+											<Label text="Sl.No."></Label>
+										</Column>
+										<Column hAlign="Begin" vAlign="Inherit">
+											<Label text="First Name"></Label>
+										</Column>
+										<Column hAlign="Begin" vAlign="Inherit">
+											<Label text="Last Name"></Label>
+										</Column>
+										<Column hAlign="Begin" vAlign="Inherit">
+											<Label text="Id"></Label>
+										</Column>
+										<Column hAlign="Begin" vAlign="Inherit">
+											<Label text="City"></Label>
+										</Column>
+									</columns>
+									<ColumnListItem id="c1">
+										<cells>
+											<Input value=""/>
+											<Input value=""/>
+											<Input value=""/>
+											<Input value=""/>
+											<Input value=""/>
+										</cells>
+									</ColumnListItem>
+								</Table>
+							</HBox>
+							<HBox height="5%" justifyContent="Center">
+								<Button id="addR" visible="true" text="Add Row" press="rowAdd"/>
+							</HBox>
+						</VBox>
+					</HBox>
 				</content>
 			</Page>
 		</pages>

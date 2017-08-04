@@ -1,1 +1,59 @@
-/* Enter your custom styles here */
+.sapMListTblCell {
+    padding: .5rem .5rem;
+    vertical-align: top;
+    font-size: 0.875rem;
+}
+tbody>tr>td.sapMListTblCell {
+    padding: 0;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    border: 1px solid grey;
+}
+.sapMListTblCell.sapMListTblCellNoData, .sapMListTblRow>:nth-last-child(2) {
+    padding-right: 0;
+}
+.sapMListTblHighlightCol + .sapMListTblHeaderCell, .sapMListTblHighlightCell + .sapMListTblCell {
+    padding-left: 0;
+}
+
+.sapMListTbl {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+.sapMInputBaseWidthPadding {
+    padding: 0;
+}
+.sapMInputBase {
+    height: 1.75rem;
+    background: transparent;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: content-box;
+}
+
+.sapMInputBaseInner {
+    color: #000000;
+    background: #ffffff;
+    border: 1 px solid grey;
+    -webkit-appearance: none;
+    border-radius: 0;
+    vertical-align: middle;
+    margin: 0;
+    -moz-appearance: textfield;
+    font-size: 0.875rem;
+    font-family: Arial,Helvetica,sans-serif;
+    line-height: normal;
+    height: 1.75rem;
+    padding: 0rem;
+}
+.sapMInputValHelpInner {
+    height: 1rem;
+    width: 1rem;
+    line-height: 1rem;
+}
+.sapMInputBase, .sapMInputBaseInner, .sapMInputBasePlaceholder {
+    box-sizing: content-box;
+}

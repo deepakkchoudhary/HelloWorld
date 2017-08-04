@@ -7,18 +7,17 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"title": "{{appTitle}}",
+		"title": "{{Training}}",
 		"description": "{{appDescription}}",
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
-			"icon": "",
+			"icon": "sap-icon://activities",
 			"favIcon": "",
 			"phone": "",
 			"phone@2": "",
@@ -30,13 +29,8 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "com.acc.helloworldHelloWorld.view.Home",
@@ -64,12 +58,64 @@
 				"settings": {
 					"bundleName": "com.acc.helloworldHelloWorld.i18n.i18n"
 				}
+			},
+			"mod_product": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/product.json",
+				"preload": true
 			}
 		},
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
 			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.acc.helloworldHelloWorld.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "NotFound"
+				}
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "Home",
+				"target": "Home"
+			}, {
+				"pattern": "Search",
+				"name": "Search",
+				"target": "Search"
+			}, {
+				"pattern": "Product/{productId}",
+				"name": "Product",
+				"target": "Product"
+			}],
+			"targets": {
+				"Home": {
+					"viewName": "Home",
+					"viewId": "Home",
+					"viewLevel": 1
+				},
+				"Search": {
+					"viewPath": "com.acc.helloworldHelloWorld.view.product",
+					"viewName": "Search",
+					"viewId": "Search",
+					"viewLevel": 2
+				},
+				"Product": {
+					"viewName": "product.Product",
+					"viewId": "Product",
+					"viewLevel": 3
+				},
+				"NotFound": {
+					"viewName": "NotFound",
+					"viewId": "NotFound"
+				}
+			}
 		}
 	}
 }

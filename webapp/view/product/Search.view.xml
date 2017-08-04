@@ -1,0 +1,81 @@
+<mvc:View controllerName="com.acc.helloworldHelloWorld.controller.product.Search" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Page id="Search" title="{i18n>searchTitle}" showNavButton="true" navButtonType="Back" navButtonPress="onNavBack">
+		<content>
+			<HBox class="sapUiMediumMarginBegin sapUiMediumMarginEnd">
+				<VBox width="100%">
+					<!-- Search Field Begin-->
+					<HBox>
+						<VBox width="5%" justifyContent="Center">
+							<Text text="Item No." width="100%" wrapping="true"/>
+						</VBox>
+						<VBox width="95%">
+							<SearchField width="100%" search="handleSearch" selectOnFocus="false"/>
+						</VBox>
+					</HBox>
+					<!-- Search Field End -->
+					<!-- Advanced Search Pannel Begin-->
+					<HBox>
+						<VBox width="100%">
+							<Panel id="advancePannel" visible="true" headerText="Advanced Search" width="100%" height="auto" expandable="true" expanded="false"
+								expandAnimation="true" backgroundDesign="Translucent">
+								<HBox>
+									<VBox width="49%">
+										<HBox>
+											<VBox width="13%" justifyContent="Center">
+												<Text text="Item Name" width="100%"></Text>
+											</VBox>
+											<VBox width="87%">
+												<Input width="100%"></Input>
+											</VBox>
+										</HBox>
+										<HBox height="20px"></HBox>
+										<HBox>
+											<VBox width="13%" justifyContent="Center">
+												<Text text="Item Parent Name" width="100%"></Text>
+											</VBox>
+											<VBox width="87%">
+												<Input width="100%"></Input>
+											</VBox>
+										</HBox>
+									</VBox>
+									<VBox width="49%">
+										<HBox>
+											<VBox width="13%" justifyContent="Center">
+												<Text text="Date" width="100%" class="sapUiMediumMarginBegin"></Text>
+											</VBox>
+											<VBox width="87%" justifyContent="Center">
+												<DatePicker class="lockedWidth" id="cDate" displayFormat="dd/MM/yyyy" textAlign="Center"/>
+											</VBox>
+										</HBox>
+										<HBox height="10px"></HBox>
+										<HBox>
+											<VBox width="100%" alignContent="Center">
+												<HBox justifyContent="End">
+													<Button text="Search" class="sapUiLargeMarginBegin"></Button>
+												</HBox>
+											</VBox>
+										</HBox>
+									</VBox>
+								</HBox>
+							</Panel>
+						</VBox>
+					</HBox>
+					<!-- Advanced Search Pannel End-->
+					<!-- List Begin-->
+					<HBox>
+						<VBox width="100%" justifyContent="Center">
+							<List id="prdList" items="{mod_product>/Products}">
+								<items>
+									<StandardListItem type="Navigation" press="goToDetail" title="{mod_product>Item_Name} ({mod_product>Item_No})"
+										icon="https://d30y9cdsu7xlg0.cloudfront.net/png/1533-200.png"></StandardListItem>
+								</items>
+							</List>
+						</VBox>
+					</HBox>
+					<!-- List End -->
+				</VBox>
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>
